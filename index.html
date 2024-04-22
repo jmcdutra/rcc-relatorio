@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[RCC] Gerador de Relatório</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Gerador de Relatórios</h1>
+        <p>Gere relatórios em BBCODE para postar no fórum de maneira fácil e rápida. Você precisa apenas adicionar os campos e selecionar opções e nunca mais irá se preocupar em desenvolver o BBCODE. A tecnologia está cada dia mais facilitando e agilizando as tarefas de nossos militares. Faça bom proveito! Caso tenha dúvidas acerca da utilização da ferramenta, acesse o tutorial em vídeo abaixo.</p>
+        <p>Desenvolvido por <strong>mitojmcam</strong></p>
+        <button onclick="window.location.href='https://example.com';">Assistir Tutorial</button>
+    </div>
+    <div class="container">
+        <div class="column first-column">
+            <form id="inputForm">
+                <label for="bannerUrl">URL do Banner (opcional):</label>
+                <input type="url" id="bannerUrl" placeholder="Insira o link aqui">
+                <label for="colorPicker">Escolha uma Cor:</label>
+                <!-- Alterar em seu HTML existente -->
+                <input type="color" id="colorPicker" required onchange="updateColorPreview(this.value)" style="border-radius: 50%; width: 34px; height: 34px; -webkit-appearance: none;">
+                <span id="colorPreview" style="border-radius: 50%; width:34px; height:34px; display:inline-block; vertical-align:middle;"></span>
+
+
+                <fieldset class="index-choice">
+                    <legend>Incluir Índice:</legend>
+                    <label>
+                        <input type="radio" name="includeIndex" value="yes" checked> Sim
+                    </label>
+                    <label>
+                        <input type="radio" name="includeIndex" value="no"> Não
+                    </label>
+                </fieldset>
+                <div class="topic-header">
+                    <h1>Estrutura do relatório</h1>
+                </div>
+                <div id="topicContainer">
+                    <!-- Elementos serão adicionados aqui dinamicamente -->
+                </div>
+                <div class="button-group">
+                    <button type="button" onclick="addTitleElement()">Adicionar Título</button>
+                    <button type="button" onclick="addTopic()">Adicionar Texto</button>
+                    <button type="button" onclick="addAvatar()">Adicionar Habbo</button>
+                </div>
+            </form>
+        </div>
+        <div class="column second-column">
+            <textarea id="readOnlyArea" readonly></textarea>
+            <div class="button-group">
+            <button onclick="buildBBCode()">Montar BBCODE</button>
+            <button onclick="copyBBCode()">Copiar BBCODE</button>
+            </div>
+            <p>OBS: Lembre-se de sempre utilizar a ferramenta de pré-visualizar para evitar bug's.</p>
+        </div>
+    </div>
+    <footer>
+        <p>Ferramenta desenvolvida por <strong>mitojmcam</strong> - Abril de 2024</p>
+        <p>© Todos os direitos reservados<p>
+        <button onclick="window.location.href='https://www.rccsystem.com/users/mitojmcam';">Perfil no RCCSystem</button>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
