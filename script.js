@@ -116,11 +116,11 @@ function buildBBCode() {
         }
     });
 
+    bbCode += buildCredits();
     bbCode += `[/td][/tr][/table][/center]`;
 
     document.getElementById('readOnlyArea').value = bbCode;
 }
-
 
 function buildIndex(titles, color) {
     let indexTable = `
@@ -183,7 +183,6 @@ function buildTitle(title, color) {
 `;
 }
 
-
 function buildTopic(topic) {
     return `
     [center][table style="margin: 0em; width: 930px; border-radius: 12px; text-align: center; line-height: 0.5em; font-family: Roboto, sans-serif; background-color: #e6e6fa;"][tr][td][color=black][size=12][font=Poppins][left]${topic}[/left][/font][/size][/color][/td][/tr][/table][/center]\n`;
@@ -197,6 +196,14 @@ function buildAvatar(url, title, desc) {
 [color=black][size=12][font=Poppins]${desc}[/font][/size][/color][/td]
 [/tr][/table][/center]
 \n`;
+}
+
+function buildCredits() {
+    return `
+    [center][img]https://i.servimg.com/u/f40/20/12/20/40/hihi1111.png[/img][/center]
+    [center][size=12][font=Poppins]BBCode gerado pelo [b]Gerador de Relatórios[/b][/font][/size][/center]
+    [center][size=12][font=Poppins][url=https://system.policercc.com.br][b]Clique aqui[/b] para acessar o gerador.[/url][/font][/size][/center]
+    [center][size=12][font=Poppins]Desenvolvido por [url=https://system.policercc.com.br/membros/mitojmcam]mitojmcam[/url][/font][/size][size=14] ®[/size][/center]`;
 }
 
 function deleteElement(button) {
